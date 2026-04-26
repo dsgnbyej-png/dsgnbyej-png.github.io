@@ -19,14 +19,45 @@ body {
   height: 80px;
   padding: 0 60px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
 
   background: rgba(43, 108, 176, 0.08); /* super light version of your blue */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.05);
   z-index: 1000;
+}
+
+/* LEFT */
+.nav-left {
+  justify-self: start;
+}
+
+/* CENTER LOGO */
+.nav-center {
+  justify-self: center;
+}
+
+.logo {
+  height: 55px;
+}
+
+/* RIGHT */
+.nav-right {
+  justify-self: end;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #2b6cb0;
 }
 
 /* LOGO */
