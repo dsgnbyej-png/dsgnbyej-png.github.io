@@ -197,7 +197,12 @@ body {
 
 /* DIGITAL THUMBNAIL */
 .digital .category-img img {
-  object-position: center 65%;
+  aspect-ratio: 4 / 5;
+}
+
+.category-img img {
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* IMAGE */
