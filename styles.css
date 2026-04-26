@@ -130,9 +130,13 @@ body {
 /* IMAGE */
 .hero-image img {
   width: 100%;
-  height: auto;
+  opacity: 0.95;
+  height: 420px;          /* controls visible crop */
+  justify-self: end;
   object-fit: cover;
-  border-radius: 12px;
+  object-position: center 30%; /* THIS is the key */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .category h2 {
@@ -305,8 +309,10 @@ body {
   gap: 30px;
 }
   .hero-grid {
-    grid-template-columns: 1fr;
-  }
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* slightly favors text */
+  gap: 60px;
+  align-items: center;  }
 
   .hero-text h1 {
     font-size: 36px;
