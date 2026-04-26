@@ -111,6 +111,15 @@ body {
   max-width: 900px;
 }
 
+.hero-name {
+  display: block;
+  font-size: 64px;
+  font-weight: 700;
+  color: #2b6cb0;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
 /* BIG STATEMENT TEXT */
 .hero h1 {
   font-size: 52px;
