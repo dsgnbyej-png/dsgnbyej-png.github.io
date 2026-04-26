@@ -75,7 +75,7 @@ body {
 
 .img-wrapper {
   width: 100%;
-  aspect-ratio: 1.5 / 2; /* adjust if you want taller/shorter */
+  aspect-ratio: 3 / 2; /* adjust if you want taller/shorter */
   overflow: hidden;
   background: #ddd;
 }
