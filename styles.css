@@ -51,7 +51,8 @@ body {
 .nav-left a,
 .nav-right a {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   color: #333;
 }
 
@@ -137,7 +138,7 @@ body {
 /* MAIN */
 .main {
   margin-left: 0;        /* remove sidebar offset */
-  padding: 120px 60px 80px;  /* push content below nav */
+  padding: 140px 80px 100px;  /* push content below nav */
 }
 
 /* GRID (BIG CHANGE) */
