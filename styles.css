@@ -73,13 +73,11 @@ body {
   font-size: 14px;
 }
 
-.crop-container {
-  width: 300px;
+.crop-me {
+  width: 200px;
   height: 200px;
-  overflow: hidden;
-}
-.crop-container img {
-  margin: -100px 0 0 -300px; /* Use negative margins to shift the visible area */
+  object-fit: cover; /* Crops the image to fill the dimensions */
+  object-position: center; /* Optional: decides which part is visible */
 }
 
 /* PROJECT PAGE */
