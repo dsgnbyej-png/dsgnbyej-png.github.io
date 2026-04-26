@@ -196,11 +196,11 @@ body {
 }
 
 /* DIGITAL THUMBNAIL */
-.digital .category-img img {
+.digital .category-img {
   aspect-ratio: 4 / 5;
 }
 
-.category-img img {
+.digital .category-img img {
   object-fit: cover;
   object-position: center top;
 }
