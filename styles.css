@@ -140,10 +140,13 @@ body {
 .hero-image img {
   width: 100%;
   opacity: 0.95;
-  height: 420px;          /* controls visible crop */
-  justify-self: end;
+  height: 420px;
+
   object-fit: cover;
-  object-position: center 30%; /* THIS is the key */
+
+  /* 👇 improved framing */
+  object-position: 60% 35%;
+
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
@@ -316,6 +319,13 @@ body {
   .categories {
   grid-template-columns: 1fr;
   gap: 30px;
+}
+
+@media (min-width: 1400px) {
+  .hero-image img {
+    height: 460px;
+    object-position: 60% 35%;
+  }
 }
   .hero-grid {
   display: grid;
