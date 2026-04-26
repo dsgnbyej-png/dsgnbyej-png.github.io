@@ -88,6 +88,18 @@ body {
   display: block;
 }
 
+.card {
+  cursor: pointer;
+}
+
+.img-wrapper img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
 /* PROJECT PAGE */
 .project-page {
   margin-left: 260px;
