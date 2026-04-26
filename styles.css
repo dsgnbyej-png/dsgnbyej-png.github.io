@@ -135,10 +135,68 @@ body {
   border-radius: 12px;
 }
 
+.category h2 {
+  transition: transform 0.3s ease;
+}
+
+.category:hover h2 {
+  transform: translateX(6px);
+}
+
+.category a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* MAIN */
 .main {
   margin-left: 0;        /* remove sidebar offset */
   padding: 140px 80px 100px;  /* push content below nav */
+}
+
+/* =========================
+   CATEGORY BLOCKS
+   ========================= */
+
+.categories {
+  margin: 100px 0 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* EACH BLOCK */
+.category {
+  cursor: pointer;
+}
+
+/* IMAGE CONTAINER */
+.category-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #ddd;
+}
+
+/* IMAGE */
+.category-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.category:hover img {
+  transform: scale(1.08);
+}
+
+/* TITLE */
+.category h2 {
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* GRID (BIG CHANGE) */
@@ -242,6 +300,10 @@ body {
    ========================= */
 @media (max-width: 768px) {
 
+  .categories {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
   .hero-grid {
     grid-template-columns: 1fr;
   }
