@@ -195,6 +195,11 @@ body {
   background: #ddd;
 }
 
+/* DIGITAL THUMBNAIL */
+.digital .category-img img {
+  object-position: center 65%;
+}
+
 /* IMAGE */
 .category-img img {
   width: 100%;
