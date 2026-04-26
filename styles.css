@@ -197,7 +197,10 @@ body {
 
 /* DIGITAL THUMBNAIL */
 .digital .category-img {
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #ddd;
 }
 
 .digital .category-img img {
