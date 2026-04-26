@@ -79,7 +79,7 @@ body {
   overflow: hidden;
 }
 .crop-container img {
-  margin: -100px 0 0 -100px; /* Use negative margins to shift the visible area */
+  margin: -100px 0 0 -300px; /* Use negative margins to shift the visible area */
 }
 
 /* PROJECT PAGE */
