@@ -23,7 +23,8 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  background: #f5f5f5;
+  background: rgba(245,245,245,0.9);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
@@ -53,8 +54,8 @@ body {
 
 /* MAIN */
 .main {
-  margin-left: 260px;
-  padding: 80px 60px;
+  margin-left: 0;        /* remove sidebar offset */
+  padding: 120px 60px 80px;  /* push content below nav */
 }
 
 /* GRID (BIG CHANGE) */
