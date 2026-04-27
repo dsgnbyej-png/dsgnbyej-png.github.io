@@ -4,88 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EJ Gandia</title>
+
   <link rel="stylesheet" href="styles.css"/>
   <link rel="shortcut icon" type="image/x-icon" href="ejfaviconblue.png">
 </head>
+
 <body>
 
-<!-- TOPNAV -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 <header class="topnav">
+
   <nav class="nav-left">
-<a href="about.html">About</a>
+    <a href="about.html">About</a>
   </nav>
 
   <div class="nav-center">
     <a href="index.html" class="logo-link">
-      <img src="images/logo.png" class="logo">
+      <img src="images/logo.png" class="logo" alt="Logo">
     </a>
   </div>
 
   <nav class="nav-right">
     <a href="contact.html">Contact</a>
   </nav>
+
 </header>
 
-<!-- MAIN GRID -->
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 <main class="main">
 
-<section class="hero">
-  <div class="hero-grid">
+  <!-- HERO -->
+  <section class="hero">
 
-    <!-- LEFT: TEXT -->
-    <div class="hero-text">
- <h1>
-  <span class="hero-name">EJ Gandia</span> graphic designer crafting modern,
-  minimal brand identities and digital experiences.
-</h1>
+    <div class="hero-grid">
 
-      <p>
-        Focused on visual storytelling, branding, and thoughtful design systems
-        across print and digital.
-      </p>
+      <!-- TEXT -->
+      <div class="hero-text">
+        <h1>
+          <span class="hero-name">EJ Gandia</span>
+          graphic designer crafting modern, minimal brand identities and digital experiences.
+        </h1>
+
+        <p>
+          Focused on visual storytelling, branding, and thoughtful design systems across print and digital.
+        </p>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="hero-image">
+        <img src="images/profile.jpg" alt="EJ Gandia portrait">
+      </div>
+
     </div>
 
-    <!-- RIGHT: IMAGE -->
-    <div class="hero-image">
-      <img src="images/profile.jpg" alt="EJ Gandia portrait">
+  </section>
+
+  <!-- =========================
+       WORK CATEGORIES
+  ========================= -->
+  <section class="categories">
+
+    <!-- PRINT -->
+    <div class="category">
+      <div class="category-img">
+        <img src="images/EJBsns.png" alt="Print work">
+      </div>
+      <h2>Print</h2>
     </div>
 
-<div class="scroll-indicator">
-  <span>Scroll</span>
-  <div class="scroll-line"></div>
-</div>
-    
-  </div>
-</section> <!-- END HERO -->
-
-<section class="categories">
-
-  <div class="category">
-    <div class="category-img">
-      <img src="images/EJBsns.png" alt="Print work">
+    <!-- DIGITAL -->
+    <div class="category digital">
+      <div class="category-img">
+        <img src="images/bbxtourney5.jpg" alt="Digital work">
+      </div>
+      <h2>Digital</h2>
     </div>
-    <h2>Print</h2>
-  </div>
 
- <div class="category digital">
-    <div class="category-img">
-      <img src="images/bbxtourney5.jpg" alt="Digital work">
+    <!-- BRANDING -->
+    <div class="category">
+      <div class="category-img">
+        <img src="images/branding.JPG" alt="Branding work">
+      </div>
+      <h2>Branding</h2>
     </div>
-    <h2>Digital</h2>
-  </div>
 
-  <div class="category">
-    <div class="category-img">
-      <img src="images/branding.JPG" alt="Branding work">
-    </div>
-    <h2>Branding</h2>
-  </div>
+  </section>
 
-</section>
-  
-
-</div>
-  
 </main>
 
 </body>
