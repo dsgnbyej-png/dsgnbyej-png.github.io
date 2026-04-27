@@ -1,13 +1,4 @@
 /* =========================
-   GOOGLE FONTS (ADD IN HTML <head> ALSO)
-   ========================= */
-/*
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-*/
-
-/* =========================
    BASE RESET + VARIABLES
    ========================= */
 
@@ -25,20 +16,54 @@
 }
 
 /* =========================
-   TYPOGRAPHY SYSTEM
+   TYPOGRAPHY (NEW FONTS)
    ========================= */
 
 body {
   background: #f5f5f5;
   color: var(--text);
-  font-family: "Inter", Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* Headings */
 h1, h2, h3 {
-  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   color: var(--text);
 }
+
+/* =========================
+   GLOBAL LINK RESET
+   ========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   CATEGORY LINKS
+   ========================= */
+
+.category a {
+  display: block;
+  color: #111;
+  text-decoration: none;
+}
+
+.category a:link,
+.category a:visited,
+.category a:hover,
+.category a:active {
+  color: #111;
+  text-decoration: none;
+}
+
+.category a:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+   ========================= */
 
 h1 {
   font-size: 48px;
@@ -61,15 +86,6 @@ p {
   font-size: 16px;
   line-height: 1.7;
   color: var(--muted);
-}
-
-/* =========================
-   GLOBAL LINK RESET
-   ========================= */
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* =========================
@@ -125,7 +141,7 @@ a {
 }
 
 /* =========================
-   LAYOUT SYSTEM
+   LAYOUT
    ========================= */
 
 .main {
@@ -139,18 +155,12 @@ section {
 }
 
 /* =========================
-   HERO SECTION
+   HERO
    ========================= */
 
 .hero {
   padding-bottom: 80px;
   border-bottom: 1px solid #e5e5e5;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-grid {
@@ -161,6 +171,7 @@ section {
 }
 
 .hero-name {
+  display: block;
   font-size: 60px;
   font-weight: 600;
   color: var(--accent);
@@ -168,8 +179,9 @@ section {
   margin-bottom: 10px;
 }
 
-/* HERO IMAGE */
+/* HERO IMAGE FIX (center correction) */
 .hero-image {
+  position: relative;
   overflow: hidden;
   border-radius: 16px;
   height: 420px;
@@ -179,8 +191,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  object-position: 60% center; /* 👈 slight right shift fix */
 }
 
 /* =========================
@@ -202,7 +213,6 @@ section {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #ddd;
 }
 
 .category-img img {
@@ -220,145 +230,102 @@ section {
   margin-top: 14px;
   font-size: 20px;
   font-weight: 500;
-  transition: transform 0.3s ease;
-}
-
-.category:hover h2 {
-  transform: translateX(6px);
-}
-
-/* DIGITAL OVERRIDE */
-.digital .category-img img {
-  object-position: center top;
 }
 
 /* =========================
-   PROJECT GRIDS (RESTORED)
+   PROJECT GRIDS (FIXED + CLEAN)
    ========================= */
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  margin-bottom: 80px;
 }
 
-/* SMALL GRID (3 COLUMN) */
 .project-grid.small {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
 /* =========================
-   PROJECT CARD IMAGES (FIXED SIZE CONTROL)
+   PROJECT CARDS
    ========================= */
 
-/* LARGE PROJECTS */
-.project-grid:not(.small) .project-card img {
-  height: 340px;
-  object-fit: cover;
+.project-card {
+  display: flex;
+  flex-direction: column;
 }
 
-/* SMALL PROJECTS */
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-card h3 {
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* LARGE vs SMALL IMAGE HEIGHTS */
+.project-grid:not(.small) .project-card img {
+  height: 340px;
+}
+
 .project-grid.small .project-card img {
   height: 220px;
-  object-fit: cover;
 }
 
 /* =========================
-   ABOUT PAGE
+   ABOUT
    ========================= */
+
+.about-page {
+  padding-top: 140px;
+}
 
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 60px;
   align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .about-image img {
   width: 100%;
   max-width: 420px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   CONTACT PAGE
+   CONTACT
    ========================= */
 
 .contact-page {
-  min-height: calc(100vh - 140px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
   text-align: center;
 }
 
-.contact-inner {
-  max-width: 520px;
-}
-
-/* EMAIL */
 .contact-email {
-  display: inline-block;
   font-size: 22px;
   color: var(--accent);
-  margin-bottom: 40px;
-  font-weight: 500;
 }
-
-.contact-email:hover {
-  opacity: 0.7;
-}
-
-/* =========================
-   LIGHTBOX
-   ========================= */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.lightbox.hidden {
-  display: none;
-}
-
-.lightbox-img {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 34px;
-  color: white;
-  cursor: pointer;
-}
-
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-.lightbox-prev { left: 20px; }
-.lightbox-next { right: 20px; }
 
 /* =========================
    RESPONSIVE
@@ -374,21 +341,12 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .project-grid,
   .project-grid.small {
     grid-template-columns: 1fr;
   }
 
   .about-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 1400px) {
-  .hero-image img {
-    object-position: 60% 35%;
   }
 }
