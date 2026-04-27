@@ -203,9 +203,7 @@ section {
 
   object-fit: cover;
 
-  /* better balanced framing */
-  object-position: 65% 50%;
-
+  transform: translateX(3%);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
