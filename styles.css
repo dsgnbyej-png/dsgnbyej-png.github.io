@@ -1,4 +1,13 @@
 /* =========================
+   GOOGLE FONTS (ADD IN HTML <head> ALSO)
+   ========================= */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+*/
+
+/* =========================
    BASE RESET + VARIABLES
    ========================= */
 
@@ -6,7 +15,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -16,47 +24,21 @@
   --border: rgba(0,0,0,0.08);
 }
 
-body {
-  background: #f5f5f5;
-  color: var(--text);
-}
-
-/* =========================
-   GLOBAL LINK RESET (IMPORTANT)
-   ========================= */
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* =========================
-   CATEGORY LINKS (FIXED)
-   ========================= */
-
-.category a {
-  display: block;
-  color: #111;
-  text-decoration: none;
-}
-
-/* Force ALL link states to behave consistently */
-.category a:link,
-.category a:visited,
-.category a:hover,
-.category a:active {
-  color: #111;
-  text-decoration: none;
-}
-
-/* Optional: subtle hover interaction (recommended) */
-.category a:hover {
-  color: var(--accent);
-}
-
 /* =========================
    TYPOGRAPHY SYSTEM
    ========================= */
+
+body {
+  background: #f5f5f5;
+  color: var(--text);
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  color: var(--text);
+}
 
 h1 {
   font-size: 48px;
@@ -82,6 +64,15 @@ p {
 }
 
 /* =========================
+   GLOBAL LINK RESET
+   ========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
    NAVIGATION
    ========================= */
 
@@ -103,17 +94,9 @@ p {
   z-index: 1000;
 }
 
-.nav-left {
-  justify-self: start;
-}
-
-.nav-center {
-  justify-self: center;
-}
-
-.nav-right {
-  justify-self: end;
-}
+.nav-left { justify-self: start; }
+.nav-center { justify-self: center; }
+.nav-right { justify-self: end; }
 
 .topnav a {
   font-size: 15px;
@@ -162,9 +145,6 @@ section {
 .hero {
   padding-bottom: 80px;
   border-bottom: 1px solid #e5e5e5;
-
-  opacity: 0;
-  transform: translateY(20px);
   animation: fadeIn 0.8s ease forwards;
 }
 
@@ -181,7 +161,6 @@ section {
 }
 
 .hero-name {
-  display: block;
   font-size: 60px;
   font-weight: 600;
   color: var(--accent);
@@ -191,7 +170,6 @@ section {
 
 /* HERO IMAGE */
 .hero-image {
-  position: relative;
   overflow: hidden;
   border-radius: 16px;
   height: 420px;
@@ -199,10 +177,8 @@ section {
 
 .hero-image img {
   width: 100%;
-  height: 420px;
-
+  height: 100%;
   object-fit: cover;
-
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
@@ -253,7 +229,6 @@ section {
 
 /* DIGITAL OVERRIDE */
 .digital .category-img img {
-  object-fit: cover;
   object-position: center top;
 }
 
@@ -267,74 +242,8 @@ section {
   gap: 60px 40px;
 }
 
-.card {
-  cursor: pointer;
-}
-
-.img-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #ddd;
-}
-
-.img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.card:hover img {
-  transform: scale(1.06);
-}
-
-.card h3 {
-  margin-top: 14px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 /* =========================
-   PAGE HEADER
-   ========================= */
-
-.page-header {
-  margin-bottom: 80px;
-  max-width: 700px;
-}
-
-.page-header h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.page-header p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
-}
-
-
-/* =========================
-   PROJECT GRIDS
-   ========================= */
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.project-grid.small {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-/* =========================
-   PROJECT CARD (BASE SYSTEM)
+   PROJECT CARDS
    ========================= */
 
 .project-card {
@@ -343,21 +252,18 @@ section {
   cursor: pointer;
 }
 
-/* IMAGE BASE RULE (ALL CARDS) */
 .project-card img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
-  transition: transform 0.4s ease;
   display: block;
+  transition: transform 0.3s ease;
 }
 
-/* HOVER */
 .project-card:hover img {
   transform: scale(1.04);
 }
 
-/* TEXT BASE */
 .project-card h3 {
   margin-top: 12px;
   font-size: 18px;
@@ -371,43 +277,18 @@ section {
   line-height: 1.5;
 }
 
-/* =========================
-   SIZE SYSTEM (IMPORTANT FIX)
-   ========================= */
-
-/* LARGE PROJECTS (top featured grid) */
+/* SIZE SYSTEM */
 .project-grid:not(.small) .project-card img {
   height: 340px;
-  object-position: center;
 }
 
-/* SMALL PROJECTS (bottom grid) */
 .project-grid.small .project-card img {
   height: 220px;
-  object-position: center;
 }
 
 /* =========================
-   OPTIONAL POLISH
+   ABOUT PAGE
    ========================= */
-
-/* prevents layout shift when images load */
-.project-card img {
-  background: #eaeaea;
-}
-
-/* keeps text spacing consistent */
-.project-card {
-  gap: 6px;
-}
-
-/* =========================
-   ABOUT PAGE FIX (CLEAN LAYOUT)
-   ========================= */
-
-.about-page {
-  padding-top: 140px;
-}
 
 .about-grid {
   display: grid;
@@ -418,159 +299,44 @@ section {
   margin: 0 auto;
 }
 
-/* IMAGE FIX */
-.about-image {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* helps align it like your hero */
-}
-
 .about-image img {
   width: 100%;
-  max-width: 420px;   /* 👈 THIS is what stops it from being huge */
-  height: auto;
+  max-width: 420px;
   border-radius: 16px;
-  object-fit: cover;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* TEXT */
-.about-text h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.about-text .lead {
-  font-size: 20px;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image {
-    justify-content: center;
-  }
-
-  .about-image img {
-    max-width: 100%;
-  }
-
-  .about-text h1 {
-    font-size: 36px;
-  }
-}
-
 /* =========================
-   CONTACT PAGE (FIXED)
+   CONTACT PAGE
    ========================= */
 
 .contact-page {
-  min-height: calc(100vh - 140px); /* fills screen under nav */
+  min-height: calc(100vh - 140px);
   display: flex;
-  align-items: center;            /* vertical centering */
-  justify-content: center;        /* horizontal centering */
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .contact-inner {
   max-width: 520px;
-  margin: 0 auto;
 }
 
-/* TITLE */
-.contact-page h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-/* BODY TEXT */
-.contact-page p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin-bottom: 40px;
-}
-
-/* EMAIL (MAIN CTA) */
+/* EMAIL */
 .contact-email {
   display: inline-block;
   font-size: 22px;
   color: var(--accent);
-  text-decoration: none;
   margin-bottom: 40px;
   font-weight: 500;
-  transition: opacity 0.2s ease;
 }
 
 .contact-email:hover {
   opacity: 0.7;
 }
 
-/* SOCIAL LINKS */
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.contact-links a {
-  text-decoration: none;
-  color: #555;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.contact-links a:hover {
-  color: #000;
-}
-
 /* =========================
-   RESPONSIVE SYSTEM
-   ========================= */
-
-@media (max-width: 768px) {
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-text h1 {
-    font-size: 36px;
-  }
-
-  .hero-image {
-    order: -1;
-  }
-
-  .categories {
-    grid-template-columns: 1fr;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-grid.small {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 1400px) {
-  .hero-image img {
-    height: 460px;
-    object-position: 60% 35%;
-  }
-}
-
-/* =========================
-   LIGHTBOX CAROUSEL
+   LIGHTBOX
    ========================= */
 
 .lightbox {
@@ -591,10 +357,8 @@ section {
   max-width: 90%;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 8px;
 }
 
-/* CLOSE BUTTON */
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -604,34 +368,48 @@ section {
   cursor: pointer;
 }
 
-/* ARROWS */
 .lightbox-prev,
 .lightbox-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 40px;
-  background: none;
-  border: none;
   color: white;
   cursor: pointer;
-  padding: 10px;
 }
 
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
 
-/* PROJECT CARDS (clickable feel) */
-.project-card {
-  cursor: pointer;
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid.small {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.project-card img {
-  width: 100%;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover img {
-  transform: scale(1.03);
+@media (min-width: 1400px) {
+  .hero-image img {
+    object-position: 60% 35%;
+  }
 }
