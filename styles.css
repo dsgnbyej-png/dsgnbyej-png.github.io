@@ -62,6 +62,20 @@ a {
 }
 
 /* =========================
+   CATEGORY THUMBNAILS (FIX)
+   ========================= */
+
+.category-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.category-img img {
+  border-radius: 16px;
+}
+
+/* =========================
    TYPOGRAPHY SYSTEM
    ========================= */
 
@@ -350,3 +364,55 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   LIGHTBOX CAROUSEL (RESTORED)
+   ========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* CLOSE BUTTON */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 34px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ARROWS */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
