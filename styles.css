@@ -186,7 +186,7 @@ section {
   opacity: 0.95;
 
   object-fit: cover;
-  object-position: 70% 50%;
+  object-position: 100% 50%;
 
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
