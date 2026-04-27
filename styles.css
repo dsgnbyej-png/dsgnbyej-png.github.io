@@ -317,6 +317,7 @@ section {
   color: #666;
 }
 
+
 /* =========================
    PROJECT GRIDS
    ========================= */
@@ -334,29 +335,71 @@ section {
 }
 
 /* =========================
-   PROJECT CARD
+   PROJECT CARD (BASE SYSTEM)
    ========================= */
 
+.project-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* IMAGE BASE RULE (ALL CARDS) */
 .project-card img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
   transition: transform 0.4s ease;
+  display: block;
 }
 
+/* HOVER */
 .project-card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
+/* TEXT BASE */
 .project-card h3 {
   margin-top: 12px;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .project-card p {
   font-size: 14px;
   color: #666;
   margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* =========================
+   SIZE SYSTEM (IMPORTANT FIX)
+   ========================= */
+
+/* LARGE PROJECTS (top featured grid) */
+.project-grid:not(.small) .project-card img {
+  height: 340px;
+  object-position: center;
+}
+
+/* SMALL PROJECTS (bottom grid) */
+.project-grid.small .project-card img {
+  height: 220px;
+  object-position: center;
+}
+
+/* =========================
+   OPTIONAL POLISH
+   ========================= */
+
+/* prevents layout shift when images load */
+.project-card img {
+  background: #eaeaea;
+}
+
+/* keeps text spacing consistent */
+.project-card {
+  gap: 6px;
 }
 
 /* =========================
