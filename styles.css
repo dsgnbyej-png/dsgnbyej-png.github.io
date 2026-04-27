@@ -30,6 +30,9 @@ h1, h2, h3 {
   color: var(--text);
 }
 
+.hero-name {
+  font-family: "Space Grotesk", sans-serif;
+}
 /* =========================
    GLOBAL LINK RESET
    ========================= */
