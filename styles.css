@@ -368,6 +368,10 @@ body {
   margin-bottom: 16px;
 }
 
+.about-text h3 {
+  margin-top: 30px;
+}
+
 /* LIST */
 .about-text ul {
   margin-top: 10px;
