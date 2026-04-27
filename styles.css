@@ -21,26 +21,37 @@ body {
   color: var(--text);
 }
 
-.category a {
+/* =========================
+   GLOBAL LINK RESET (IMPORTANT)
+   ========================= */
+
+a {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
+
+/* =========================
+   CATEGORY LINKS (FIXED)
+   ========================= */
 
 .category a {
-  text-decoration: none;
-  color: #111;
   display: block;
+  color: #111;
+  text-decoration: none;
 }
 
-/* force ALL states to behave the same */
+/* Force ALL link states to behave consistently */
 .category a:link,
 .category a:visited,
-.category a:hover {
-  color: var(--accent);
-}.category a:active {
+.category a:hover,
+.category a:active {
   color: #111;
   text-decoration: none;
+}
+
+/* Optional: subtle hover interaction (recommended) */
+.category a:hover {
+  color: var(--accent);
 }
 
 /* =========================
@@ -105,7 +116,6 @@ p {
 }
 
 .topnav a {
-  text-decoration: none;
   font-size: 15px;
   font-weight: 500;
   color: #333;
@@ -207,12 +217,6 @@ section {
   cursor: pointer;
 }
 
-.category a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 .category-img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -288,104 +292,8 @@ section {
 }
 
 /* =========================
-   ABOUT PAGE
-   ========================= */
-
-.about-page {
-  padding-top: 120px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.about-text h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.lead {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.about-text p {
-  margin-bottom: 16px;
-}
-
-.about-text h3 {
-  margin-top: 30px;
-}
-
-.about-text ul {
-  padding-left: 18px;
-  color: #555;
-}
-
-.about-text li {
-  margin-bottom: 6px;
-}
-
-/* =========================
-   CONTACT PAGE
-   ========================= */
-
-.contact-page {
-  padding-top: 140px;
-  text-align: center;
-}
-
-.contact-inner {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.contact-email {
-  display: inline-block;
-  font-size: 22px;
-  color: var(--accent);
-  text-decoration: none;
-  margin-bottom: 40px;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-.contact-email:hover {
-  opacity: 0.7;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.contact-links a {
-  text-decoration: none;
-  color: #555;
-  font-size: 14px;
-}
-
-.contact-links a:hover {
-  color: #000;
-}
-
-/* =========================
    PAGE HEADER
-========================= */
+   ========================= */
 
 .page-header {
   margin-bottom: 80px;
@@ -405,7 +313,7 @@ section {
 
 /* =========================
    PROJECT GRIDS
-========================= */
+   ========================= */
 
 .project-grid {
   display: grid;
@@ -414,7 +322,6 @@ section {
   margin-bottom: 80px;
 }
 
-/* SMALL GRID */
 .project-grid.small {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -422,7 +329,7 @@ section {
 
 /* =========================
    PROJECT CARD
-========================= */
+   ========================= */
 
 .project-card img {
   width: 100%;
@@ -469,21 +376,12 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .about-grid {
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-text h1 {
-    font-size: 36px;
-  }
-
-  .contact-page h1 {
-    font-size: 34px;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    gap: 12px;
+  .project-grid.small {
+    grid-template-columns: 1fr;
   }
 }
 
