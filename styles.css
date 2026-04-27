@@ -233,57 +233,36 @@ section {
 }
 
 /* =========================
-   PROJECT GRID
+   PROJECT GRIDS (RESTORED)
    ========================= */
 
-.grid {
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 60px 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* SMALL GRID (3 COLUMN) */
+.project-grid.small {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 /* =========================
-   PROJECT CARDS
+   PROJECT CARD IMAGES (FIXED SIZE CONTROL)
    ========================= */
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover img {
-  transform: scale(1.04);
-}
-
-.project-card h3 {
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.project-card p {
-  font-size: 14px;
-  color: #666;
-  margin-top: 6px;
-  line-height: 1.5;
-}
-
-/* SIZE SYSTEM */
+/* LARGE PROJECTS */
 .project-grid:not(.small) .project-card img {
   height: 340px;
+  object-fit: cover;
 }
 
+/* SMALL PROJECTS */
 .project-grid.small .project-card img {
   height: 220px;
+  object-fit: cover;
 }
 
 /* =========================
