@@ -38,14 +38,11 @@
 
   <!-- PAGE HEADER -->
   <section class="page-header">
-
     <h1>Print</h1>
-
     <p>
       Editorial, publication, and print-based design work focused on
       typography, layout systems, and composition.
     </p>
-
   </section>
 
   <!-- =========================
@@ -54,24 +51,28 @@
   <section class="project-grid">
 
     <!-- PROJECT 1 -->
-    <div class="project-card large">
+    <div class="project-card large"
+      data-images="
+      images/print/Process Book.jpg,
+      images/print/process2.jpg,
+      images/print/process3.jpg">
+
       <img src="images/print/Process Book.jpg" alt="Process Book">
 
       <h3>Process Book</h3>
-      <p>
-        A publication exploring design process, structure, and visual systems
-        through editorial layout.
-      </p>
+      <p>A publication exploring design process, structure, and visual systems.</p>
     </div>
 
     <!-- PROJECT 2 -->
-    <div class="project-card large">
+    <div class="project-card large"
+      data-images="
+      images/print/typography1.jpg,
+      images/print/typography2.jpg">
+
       <img src="images/print2.jpg" alt="Typography Study">
 
       <h3>Typography Study</h3>
-      <p>
-        An exploration of hierarchy, spacing, and grid-based composition in print design.
-      </p>
+      <p>Exploration of hierarchy, spacing, and grid-based composition.</p>
     </div>
 
   </section>
@@ -81,17 +82,23 @@
   ========================= -->
   <section class="project-grid small">
 
-    <div class="project-card">
+    <div class="project-card"
+      data-images="images/print/poster1.jpg,images/print/poster2.jpg">
+
       <img src="images/print3.jpg" alt="Poster Series">
       <h3>Poster Series</h3>
     </div>
 
-    <div class="project-card">
+    <div class="project-card"
+      data-images="images/print/editorial1.jpg,images/print/editorial2.jpg">
+
       <img src="images/print4.jpg" alt="Editorial Layout">
       <h3>Editorial Layout</h3>
     </div>
 
-    <div class="project-card">
+    <div class="project-card"
+      data-images="images/print/experimental1.jpg,images/print/experimental2.jpg">
+
       <img src="images/print5.jpg" alt="Experimental Print">
       <h3>Experimental Print</h3>
     </div>
@@ -99,6 +106,70 @@
   </section>
 
 </main>
+
+<!-- =========================
+     LIGHTBOX (ADD THIS)
+========================= -->
+<div id="lightbox" class="lightbox hidden">
+
+  <span class="lightbox-close">&times;</span>
+
+  <img class="lightbox-img" src="" alt="Project image">
+
+  <button class="lightbox-prev">&#10094;</button>
+  <button class="lightbox-next">&#10095;</button>
+
+</div>
+
+<!-- =========================
+     LIGHTBOX SCRIPT
+========================= -->
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const cards = document.querySelectorAll(".project-card");
+
+// OPEN LIGHTBOX
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    const raw = card.getAttribute("data-images");
+    currentImages = raw.split(",").map(img => img.trim());
+
+    currentIndex = 0;
+    lightboxImg.src = currentImages[currentIndex];
+    lightbox.classList.remove("hidden");
+
+  });
+});
+
+// NEXT
+document.querySelector(".lightbox-next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+});
+
+// PREV
+document.querySelector(".lightbox-prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+});
+
+// CLOSE
+document.querySelector(".lightbox-close").addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+});
+
+// CLICK BACKDROP TO CLOSE
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+  }
+});
+</script>
 
 </body>
 </html>
