@@ -171,7 +171,7 @@ body {
   object-fit: cover;
 
   /* 👇 improved framing */
-  object-position: 60% 35%;
+  object-position: 50% 50%;
 
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
