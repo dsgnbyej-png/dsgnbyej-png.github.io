@@ -114,5 +114,70 @@
 
 </main>
 
+<!-- =========================
+     LIGHTBOX (ADD THIS)
+========================= -->
+<div id="lightbox" class="lightbox hidden">
+
+  <span class="lightbox-close">&times;</span>
+
+  <img class="lightbox-img" src="" alt="Project image">
+
+  <button class="lightbox-prev">&#10094;</button>
+  <button class="lightbox-next">&#10095;</button>
+
+</div>
+
+<!-- =========================
+     LIGHTBOX SCRIPT
+========================= -->
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const cards = document.querySelectorAll(".project-card");
+
+// OPEN LIGHTBOX
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    const raw = card.getAttribute("data-images");
+    currentImages = raw.split(",").map(img => img.trim());
+
+    currentIndex = 0;
+    lightboxImg.src = currentImages[currentIndex];
+    lightbox.classList.remove("hidden");
+
+  });
+});
+
+// NEXT
+document.querySelector(".lightbox-next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+});
+
+// PREV
+document.querySelector(".lightbox-prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex];
+});
+
+// CLOSE
+document.querySelector(".lightbox-close").addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+});
+
+// CLICK BACKDROP TO CLOSE
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+  }
+});
+</script>
+
+
 </body>
 </html>
