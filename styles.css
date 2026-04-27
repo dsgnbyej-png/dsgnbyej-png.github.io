@@ -27,13 +27,18 @@ body {
   display: block;
 }
 
-/* ensure ALL states stay consistent */
+.category a {
+  text-decoration: none;
+  color: #111;
+  display: block;
+}
+
+/* force ALL states to behave the same */
 .category a:link,
 .category a:visited,
 .category a:hover {
-  color: #2b6cb0;
-}
-.category a:active {
+  color: var(--accent);
+}.category a:active {
   color: #111;
   text-decoration: none;
 }
