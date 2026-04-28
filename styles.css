@@ -393,7 +393,8 @@ section {
   }
 
   .hero-name {
-    font-size: 42px;
+    font-size: 36px;
+    line-height: 1.2;
   }
 
   /* GRIDS */
