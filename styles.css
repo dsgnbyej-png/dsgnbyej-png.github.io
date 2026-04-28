@@ -387,16 +387,24 @@ section {
   }
 
   /* HERO */
-  .hero-grid {
+   .hero-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .hero-name {
-    font-size: 36px;
-    line-height: 1.2;
+  /* FIX THE DESCRIPTION TEXT SIZE */
+  .hero-text h1 {
+    font-size: 20px;
+    line-height: 1.4;
   }
 
+  /* KEEP NAME PROMINENT */
+  .hero-name {
+    display: block;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
   /* GRIDS */
   .categories {
     grid-template-columns: 1fr;
